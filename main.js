@@ -1,5 +1,6 @@
 let areaGioco = document.getElementById("areaGioco");
 let numeriGiocatore = [];
+let numeriGiusti = [];
 //genera numeri casuali con la funzione randomNum()
 let numeriCasuali = randomNum();
 
@@ -18,10 +19,18 @@ setTimeout(function () {
             numeriGiocatore[i] = parseInt(prompt("Inserisci i numeri che hai visto prima"));
         }
     },10);
+    
+    setTimeout(function(){
+        for(i = 0; i<numeriCasuali.length; i++){
+            for(j = 0; j<numeriCasuali.length; j++){
+                if(numeriGiocatore[i] == numeriCasuali[j]){
+                    numeriGiusti.push(numeriGiocatore[i]);
+                }
+            }
+        }
+    },10);
 
 }, 3000);
-
-
 
 function randomNum() {
     let Lista = [];
