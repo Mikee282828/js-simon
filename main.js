@@ -15,8 +15,13 @@ setTimeout(function () {
     areaGioco.innerHTML = "";
     //mostra un prompt che chiede 5 numeri 
     setTimeout(function () {
-        for (i = 0; i < 5; i++) {
-            numeriGiocatore[i] = parseInt(prompt("Inserisci i numeri che hai visto prima"));
+        let i = 0;
+        while (numeriGiocatore.length < 5) {
+            let num = parseInt(prompt("Inserisci i numeri che hai visto prima"));
+            if(!numeriGiocatore.includes(num)){
+                numeriGiocatore[i] = num;
+                i++;
+            }
         }
     },10);
     
@@ -30,12 +35,22 @@ setTimeout(function () {
         }
     },10);
 
+    setTimeout(function(){
+        areaGioco.innerHTML = `<h2>I numeri giusti inseriti dall'utente sono: ${numeriGiusti}</h2>`
+    },10);
+
 }, 3000);
+
 
 function randomNum() {
     let Lista = [];
-    for (let i = 0; i < 5; i++) {
-        Lista[i] = Math.round(Math.random() * 100);
+    let i = 0;
+    while (Lista.length < 5) {
+        let num = Math.round(Math.random()*1000);
+        if(!Lista.includes(num)){
+            Lista[i] = num;
+            i++;
+        }
     }
     return Lista;
 }
