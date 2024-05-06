@@ -26,8 +26,8 @@ setTimeout(function () {
     },10);
     
     setTimeout(function(){
-        for(i = 0; i<numeriCasuali.length; i++){
-            for(j = 0; j<numeriCasuali.length; j++){
+        for(let i = 0; i<numeriCasuali.length; i++){
+            for(let j = 0; j<numeriCasuali.length; j++){
                 if(numeriGiocatore[i] == numeriCasuali[j]){
                     numeriGiusti.push(numeriGiocatore[i]);
                 }
